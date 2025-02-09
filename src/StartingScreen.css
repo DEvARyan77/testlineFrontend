@@ -1,0 +1,82 @@
+#startScreen{
+    background-color: #BDABDA;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#startButton{
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    padding-right: 10px;
+    width: 100px;
+    height: 50px;
+    border-bottom: 5px solid#D8F5F8;
+    overflow: hidden;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+#ArrowLeft{
+    transform: translateX(-100px);
+    transition: all 0.5s;
+}
+#ArrowRight{
+    transform: translateX(-20px);
+    transition: all 0.5s;
+}
+
+#startButton p{
+    margin-right: 10px;
+    transform: translateX(-20px);
+    transition: all 0.5s;
+    z-index: 1;
+}
+
+#startButton img{
+    height: 20px;
+    z-index: 1;
+}
+
+#startButton:hover #ArrowRight{
+    transform: translateX(40px);
+}
+#startButton:hover #ArrowLeft{
+    transform: translateX(10px);
+}
+#startButton:hover p{
+    transform: translateX(20px);
+}
+#startButton:hover #startScreenOver{
+    transform: translate(-130px,0px);
+}
+#startButton:hover .startScreenOver{
+    transform: translate(-41px,0px);
+}
+
+#startScreenOver{
+    background-color: #D8F5F8;
+    color: #D8F5F8;
+    width: 200px !important;
+    height: 70px !important;
+    border-radius: 10px;
+    transform: translate(-130px,100px);
+    z-index: 0;
+    transition: all 0.5s;
+}
+.startScreenOver{
+    background-color: #D8F5F8;
+    color: #D8F5F8;
+    width: 200px !important;
+    height: 70px !important;
+    border-radius: 10px;
+    transform: translate(-130px,100px);
+    z-index: 0;
+    transition: all 0.5s;
+}

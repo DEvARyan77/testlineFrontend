@@ -1,10 +1,10 @@
 import React from 'react';
 import { useEffect } from 'react';
 import './Login.css';
-import UntitledDesign from './untitled_design.png';
-import UntitledDesign1 from './untitled_design1.png';
-import UntitledDesign2 from './untitled_design2.png';
-import Bear from './bear.png';
+import UntitledDesign from '../src/Image/untitled_design.png';
+import UntitledDesign1 from '../src/Image/untitled_design1.png';
+import UntitledDesign2 from '../src/Image/untitled_design2.png';
+import Bear from '../src/Image/bear.png';
 
 function Login() {
   const getCookie = (name) => {
@@ -31,35 +31,7 @@ function Login() {
       alert('Password length is less than 8 characters')
       return;
     }
-    
-    fetch(`${process.env.REACT_APP_API_URL}login`,{
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({Username: username, Password: password})
-    })
-    .then(async response =>{
-      if(response.status===200){
-        const data = await response.json();
-        const expires = new Date();
-        expires.setFullYear(expires.getFullYear() + 100);
-        document.cookie = `token=${data.token}; expires=${expires.toUTCString()}; path=/`;
-        window.location.href = '/';
-      }
-      if(response.status===422){
-        alert('Empty Fields!');
-      }
-      if(response.status===423){
-        alert('Password Length is less than 8 characters!');
-      }
-      if(response.status===404){
-        alert('User does not exist!');
-      }
-      if(response.status===401){
-        alert('Invalid Password!');
-      }
-    }).catch(error => console.error('Error:', error));
+    window.location.href = '/';
   }
   function eyes(e){
     let inputLength = e.target.value.length;

@@ -1,0 +1,122 @@
+#questionScreen{
+    background-color: #BDABDA;
+    position: absolute;
+    padding: 10px;
+    width: 100vw;
+    box-sizing: border-box;
+}
+
+#question{
+    background-color: #FFFFFF;
+    margin: 0px;
+    border-radius: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+}
+
+#questionWindow{
+    height: calc(100vh - 92px);
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+    padding-top: 1px;
+    margin-top: 10px;
+}
+
+#options{
+    overflow: hidden;
+    /* background-color: #D3D5D7; */
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 650px;
+    justify-content: space-between;
+}
+
+#questionButton{
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    width: calc(100vw - 30px);
+    display: flex;
+    justify-content: space-between;
+}
+
+.option{
+    padding: 10px;
+}
+
+#options p{
+    /* background-color: red; */
+    margin-right: 10px;
+    width: fit-content;
+    height: fit-content;
+    min-width: 250px;
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    /* justify-content: space-around; */
+    border: 2px solid #D3D5D7;
+    box-sizing: border-box;
+    border-radius: 30px;
+}
+
+#optionSelect{
+    height: 17px !important;
+    width: 17px !important;
+    border-radius: 50%;
+    box-sizing: border-box;
+    border: 2px solid #D3D5D7;
+    margin-right: 10px;
+    /* transform: translateX(-20px); */
+}
+
+#solution{
+    overflow: scroll;
+    /* background-color: #D3D5D7; */
+    overflow-x: hidden;
+    border: 2px solid #D8F5F8;
+    padding: 10px;
+    height: 25vh;
+    border-radius: 10px;
+}
+
+#solution::-webkit-scrollbar{
+    width: 10px;
+}
+
+#questionWindow{
+    overflow: scroll;
+    overflow-x: hidden;
+    /* background-color: red; */
+    height: calc(100vh - 152px);
+}
+
+#questionWindow::-webkit-scrollbar{
+    width: 0px;
+}
+
+#whole{
+    height: calc(100vh - 92px);
+    border-radius: 10px;
+    background-color: white
+}
+
+@media screen and (max-width: 499px){
+    #questionButton{
+        position: absolute;
+        bottom: 15px;
+        left: 15px;
+        width: calc(100vw - 30px);
+        display: flex;
+        justify-content: space-between;
+    }
+    #questionWindow{
+        height: calc(100vh - 200px);
+    }
+    #whole{
+        height: calc(100vh - 130px);
+    }
+}

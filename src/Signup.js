@@ -1,10 +1,10 @@
 import React from 'react';
 import { useEffect } from 'react';
 import './Signup.css';
-import UntitledDesign from './untitled_design.png';
-import UntitledDesign1 from './untitled_design1.png';
-import UntitledDesign2 from './untitled_design2.png';
-import Bear from './bear.png';
+import UntitledDesign from '../src/Image/untitled_design.png';
+import UntitledDesign1 from '../src/Image/untitled_design1.png';
+import UntitledDesign2 from '../src/Image/untitled_design2.png';
+import Bear from '../src/Image/bear.png';
 
 function Signup() {
   const getCookie = (name) => {
@@ -37,34 +37,7 @@ function Signup() {
       alert('Invalid email format');
       return;
     }
-    console.log(process.env.REACT_APP_API_URL)
-    fetch(`${process.env.REACT_APP_API_URL}signup`,{
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({Username: username, Email: email, Password: password})
-    })
-    .then(response =>{
-      if(response.status===200){
-        window.location.href = '/login';
-      }
-      if(response.status===409){
-        alert('User already exists');
-      }
-      if(response.status===400){
-        alert('Error saving user');
-      }
-      if(response.status===422){
-        alert('Empty Fields');
-      }
-      if(response.status===423){
-        alert('Password Length is less than 8 characters');
-      }
-      if(response.status===424){
-        alert('Invalid Email Format');
-      }
-    }).catch(error => console.error('Error:', error));
+    window.location.href = '/login';
   }
 
   function eyes(e){
@@ -106,7 +79,7 @@ function Signup() {
           <div className="eye right-eye"></div>
         </div>
         <form className="form-contents">
-          <h2>Login</h2>
+          <h2>Signup</h2>
           <input
             type="text"
             placeholder="Username"
